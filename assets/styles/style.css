@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=Rubik+Dirt&display=swap');
+
+
+:root {
+  --light-gray-: #F0EBE3;
+  --gray-: #E4DCCF;
+  --green-: #7D9D9C;
+  --dark-green-: #576F72;
+}
+
+* {
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray-);
+}
+
+/* header */
+
+header {
+  display: inline;
+  background-color: var(--green-);
+}
+
+header h1 {
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--gray-);
+  margin-top: -2rem;
+  padding: 6rem 0;
+  font-size: 3rem;
+  z-index: -2;
+  transition: 2s;
+  animation-name: blur2;
+  animation-duration: 2s;
+}
+
+/* header h1 animation */
+@keyframes blur2{
+  0% {opacity: 0} 
+  50% {opacity: 0.5}
+  100% {opacity: 1}
+}
+
+/* slide show */
+.slides{
+  display: none;
+}
+
+#slide-container img{
+  vertical-align: middle;
+  max-height: 19rem;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  filter: brightness(20%);
+}
+
+/* slide animation */
+.fade {
+  animation-name: blur;
+  animation-duration: 1s;
+}
+
+@keyframes blur {
+  from {opacity: 0.5} 
+  to {opacity: 1}
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--dark-green-);
+  padding: 2rem 2rem;
+  margin-top: -2rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 4px 2px 2px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+}
+
+#logo {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: orange;
+  font-family: 'Rubik Dirt', cursive;
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  list-style-type: none;
+  margin: 0 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--gray-);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+nav ul li a:hover {
+  background-color: var(--green-);
+}
+
+/* content */
+main {
+  display: flex;
+  background-color: var(--light-gray-);
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--gray-);
+}
+
+.movie-desc {
+  display: flex;
+}
+
+.movie-desc figcaption {
+  text-align: center;
+}
+
+.movie-desc p {
+  text-align: justify;
+}
+
+.movie-image {
+  max-width: 15rem;
+  max-height: 25rem;
+  object-fit: cover;
+}
+
+hr {
+  border: 0.2rem solid var(--green-);
+  border-radius: 1rem;
+  margin: 2rem 0;
+  background-color: var(--green-);
+}
+
+iframe {
+  max-width: 30rem;
+  max-height: 20rem;
+  margin: 0 auto;
+  display: block;
+}
+
+/* aside */
+aside {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 2rem 2rem 2rem 1rem;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  height: 40rem;
+  position: sticky;
+  top: 7rem;
+  background-color: var(--gray-);
+}
+
+
+aside h1 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+aside p {
+  text-align: justify;
+  padding: 1rem;
+}
+
+#my-photo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+aside figcaption {
+  font-weight: bold;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+
+footer {
+  background-color: var(--green-);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+footer a {
+  font-family: 'Rubik Dirt', cursive;
+  text-decoration: none;
+  color: orange;
+  letter-spacing: 0.1rem;
+}
+
+@media (max-width: 900px) {
+  nav ul li {
+    margin: 0 0.5rem;
+  }
+
+  main {
+    display: block;
+  }
+
+  aside {
+    /* max-width: 500px; */
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1rem;
+    padding: 3rem 0;
+    margin-top: 0;
+  }
+
+  #slide-container img{
+    max-height: 9rem;
+  }
+
+  nav {
+    padding: 1rem 0.5rem;
+  }
+
+  nav ul li a {
+    padding: 0;
+  }
+
+  .movie-desc {
+    display: block;
+  }
+
+  .movie-image {
+    width: 100%;
+    max-height: 30rem;
+    display: block;
+    margin: 0 auto;
+  }
+
+  iframe {
+    width: 100%;
+    max-height: 15rem;
+  }
+
+  aside {
+    /* max-width: 400px; */
+    margin: 0 auto;
+  }
+
+  #my-photo {
+    width: 5rem;
+  }
+}
